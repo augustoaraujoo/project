@@ -1,8 +1,6 @@
 
 # Nome Do Projeto
 
-Descrição curta do projeto. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
-
 
 ## 📖 Contribuição
 
