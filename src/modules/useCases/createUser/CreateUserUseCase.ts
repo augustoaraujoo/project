@@ -10,7 +10,9 @@ class CreateUserUseCase {
     constructor(private prisma: PrismaClient) { }
 
     async execute({ name, email, password }: IRequest) {
+
         const createUser = await this.prisma.user.create({
+
             data: {
                 name,
                 email,
