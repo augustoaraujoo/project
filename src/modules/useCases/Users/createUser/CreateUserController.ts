@@ -3,7 +3,7 @@ import { CreateUserUseCase } from './CreateUserUseCase';
 
 class CreateUserController {
     constructor(private createUseCase: CreateUserUseCase) { }
-    handle(request: Request, response: Response) {
+    async handle(request: Request, response: Response) {
         const { name, email, password } = request.body;
 
         if (!name || !email || !password) {
@@ -11,7 +11,7 @@ class CreateUserController {
         }
         
         try {
-            const create = this.createUseCase.execute({ name, email, password })
+            const create = await this.createUseCase.execute({ name, email, password })
             return response.status(201).json(create);
 
         } catch (error) {
