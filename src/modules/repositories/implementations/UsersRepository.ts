@@ -15,7 +15,7 @@ class UsersRepository implements IUsersRepository {
         }
         return UsersRepository.INSTANCE;
     }
-    
+
     createNewUser({ name, email, password }: ICreateUserDTO): User {
         throw new Error("Method not implemented.");
     }
@@ -31,6 +31,5 @@ class UsersRepository implements IUsersRepository {
     listUsers(): User[] {
         throw new Error("Method not implemented.");
     }
-
 }
-export { UsersRepository }
+export { UsersRepository };

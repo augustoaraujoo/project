@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from "uuid";
 class User {
     id!: string;
     admin!: boolean;
@@ -18,4 +18,4 @@ class User {
     }
 }
 
-export { User }
+export { User };

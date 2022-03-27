@@ -7,21 +7,21 @@ import { listSpecificUserController } from "../modules/useCases/Users/listSpecif
 const usersRoutes = Router();
 
 usersRoutes.get("/", (request, response) => {
-    return response.status(200).json("ok")
+    return response.status(200).json("ok");
 });
 
 usersRoutes.get("/list", (request, response) => {
     return listAllUsersController.handle(request, response);
-})
+});
 
 usersRoutes.get("/userPost", (request, response) => {
     return listPostOfUserController.handle(request, response);
-})
+});
 usersRoutes.get("/:id", (request, response) => {
     return listSpecificUserController.handle(request, response);
-})
+});
 usersRoutes.post("/", (request, response) => {
     return createUserController.handle(request, response);
-})
+});
 
 export { usersRoutes };

@@ -1,13 +1,12 @@
 import { PrismaClient } from "@prisma/client";
 
 interface IRequest {
-    id: string,
-    title: string,
-    description: string,
+    id: string;
+    title: string;
+    description: string;
 }
 class CreatePostUseCase {
-
-    constructor(private prisma: PrismaClient) { }
+    constructor(private prisma: PrismaClient) {}
     async execute({ id, title, description }: IRequest) {
         const createPost = await this.prisma.post.create({
             data: {
@@ -15,12 +14,12 @@ class CreatePostUseCase {
                 description,
                 user: {
                     connect: {
-                        id
-                    }
-                }
-            }
-        })
-        return createPost
+                        id,
+                    },
+                },
+            },
+        });
+        return createPost;
     }
 }
-export { CreatePostUseCase }
+export { CreatePostUseCase };
